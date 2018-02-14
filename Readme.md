@@ -1,14 +1,47 @@
 # UEFTW
 
 ```
- ____ ____ ____ ____ ____
-||U |||E |||F |||T |||W ||  Some of UEFI Drivers by me. Taken from my early
-||__|||__|||__|||__|||__||  forked of Clover and 'others' below.
-|/__\|/__\|/__\|/__\|/__\|  No sources available yet, just binary (EAT that!).
+ _____ _____ _____ _____ _____
+|| U ||| E ||| F ||| T ||| W ||  Some of UEFI Toys by me. Taken from my early
+||___|||___|||___|||___|||___||  forked of Clover and 'others' below.
+|/___\|/___\|/___\|/___\|/___\|  No sources available yet, just binary (EAT that!).
 ```
 
 - [How-to](#how-to).
 - [Download](#download).
+
+# Shell Applications
+
+> Which meant must be run from / within Shell.
+
+## ShellOpt
+
+> Port of GNUEFI _Finnbarr P. Murphy_ ShellOpt ([>>>](/fpmurphy/UEFI-Utilities)) to EDK2, to set / delete various Shell options.
+
+```
+Usage: ShellOpt -s|--set [-nomap] [-nostartup | -startup] [-noversion]
+                         [-noconsolein] [-noconsoleout] [-nointerrupt]
+                         [-_exit] [-nonest] [-delay[:n]]
+       ShellOpt -c|--clear
+       ShellOpt -r|--restore
+       ShellOpt -h|--help
+```
+
+## ShellExpand
+
+> To eliminate known Shell bugs `edit` command by translating TAB into SPACE chars with custom size.
+
+
+```
+* Usage: ShellExpand -t[:n] infile outfile
+         ShellExpand infile outfile
+         ShellExpand inoutfile
+         ShellExpand -h
+* Default / min tab size (-t): 2
+```
+
+
+# UEFI Drivers
 
 ## DBounce
 
@@ -43,7 +76,7 @@ Following hotkeys are available to use while booting:
 
 |Key|Function|
 | --- | --- |
-|x | Disable this driver. |
+| x | Disable this driver. |
 | c | Clear previously stored nvram config. |
 | s | Launch shell app (if exists) as chainloader replacement. |
 
