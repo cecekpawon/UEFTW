@@ -40,7 +40,6 @@ Usage: ShellOpt -s|--set [-nomap] [-nostartup | -startup] [-noversion]
 * Default / min tab size (-t): 2
 ```
 
-
 # UEFI Drivers
 
 ## DBounce
@@ -123,6 +122,7 @@ Stoled from _CodeRush_ [CrScreenshotDxe](/LongSoft/CrScreenshotDxe), will appear
 
 | Color | Description |
 | --- | --- |
+| White | DBounce are initialised. |
 | Green | DBounce are enable. |
 | Red | DBounce are disable. |
 | Orange | Some of hotkey were executed. |
@@ -283,7 +283,7 @@ This driver try to hook ExitBootServices event and patching ACPI as below.
 
 _mackerintel_, _Mozodojo_, _Slice_,  _SunnyKi_, _al3xtjames_, and Clover devs.
 
-## How-to
+# How-to
 
 **Driver generic options:**
 
@@ -324,6 +324,6 @@ Please use [UEFITool](/LongSoft/UEFITool ) to extract the driver.
 | PE32 image | Contain efi binary. |
 | Raw | Contain default config plist. |
 
-## Download
+# Download
 
 Precompiled binaries always can be found [here](Releases).
