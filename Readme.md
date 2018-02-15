@@ -29,7 +29,7 @@ Usage: ShellOpt -s|--set [-nomap] [-nostartup | -startup] [-noversion]
 
 ## ShellExpand
 
-> To eliminate known Shell bugs `edit` command by translating TAB into SPACE chars with custom size.
+> To eliminate known Shell bugs `edit` command by translating TABS to SPACES with custom size.
 
 
 ```
@@ -118,7 +118,7 @@ Following hotkeys are available to use while booting:
 
 **Indicator**
 
-Stoled from _CodeRush_ [CrScreenshotDxe](/LongSoft/CrScreenshotDxe), will appear as a small square on top-left corner of your screen while booting:
+Stoled from _CodeRush_ [CrScreenshotDxe](https://github.com/LongSoft/CrScreenshotDxe), will appear as a small square on top-left corner of your screen while booting:
 
 | Color | Description |
 | --- | --- |
@@ -317,7 +317,7 @@ bcfg driver add N <driver-name>.efi <driver-name>
 
 **Extract binary:**
 
-Please use [UEFITool](/LongSoft/UEFITool ) to extract the driver.
+Please use [UEFITool](https://github.com/LongSoft/UEFITool) to extract the driver.
 
 | Section | Description |
 | --- | --- |
