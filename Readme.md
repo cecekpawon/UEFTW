@@ -147,6 +147,10 @@ This driver try to hook ExitBootServices event and patching kernelcache includin
 
 ```xml
 <dict>
+  <key>BlockKextCaches</key>
+  <array>
+    <string>com.apple.driver.AppleHDA</string>
+  </array>
   <key>KextsToPatch</key>
   <array>
     <dict>
@@ -201,6 +205,7 @@ This driver try to hook ExitBootServices event and patching kernelcache includin
 
 | Key | Description |
 | --- | --- |
+| BlockKextCaches | Array of kexts identifier to block. |
 | KextsToPatch | Array of kexts to patch. |
 | KernelToPatch | Array of kernel to patch. |
 | WholePrelinked | Patch the whole prelinked / just kernel. |
