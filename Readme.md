@@ -7,6 +7,8 @@
 |/___\|/___\|/___\|/___\|/___\|  No sources available yet, just binary (EAT that!).
 ```
 
+> This project is intended for general use and no warranty is implied for suitability to any given task. I hold no responsibility for your setup or any damage done while using / installing / modifying current sources / supplied binaries. **YOU HAVE BEEN WARNED**. While my old forked of Clover sources still available for FREE to uses [here](https://github.com/cecekpawon/CloverPkg).
+
 - [How-to](#how-to).
 - [Download](#download).
 
@@ -138,8 +140,7 @@ _Christoph Pfisterer_ + _CodeRush_ for codes, and _modbin_ for pointing to this 
 | `<driver-guid>` | 99665243-5AED-4D57-92AF-8C785FBC7558 |
 | `<driver-name>` | KernextPatcher |
 
-> KernextPatcher _(stand for Kernel & Kext Patcher)_ is an Darwin kernel & extensions patcher UEFI driver based on Clover Memfix by _dmazar_.
-This driver try to hook ExitBootServices event and patching kernelcache including kernel it self and kexts.
+> KernextPatcher _(stand for Kernel & Kext Patcher)_ is an **Darwin** kernel & extensions patcher UEFI driver based on Clover Memfix by _dmazar_. This driver will try to hook ExitBootServices event and do patching booter and kernelcache including kernel it self and kexts.
 
 **Multiple places config plist to load** ([>>>](#how-to)):
 
@@ -189,6 +190,29 @@ This driver try to hook ExitBootServices event and patching kernelcache includin
       </data>
     </dict>
   </array>
+  <key>BooterToPatch</key>
+  <array>
+    <dict>
+      <key>Comment</key>
+      <string>UnlockSlideSupportForSafeModeAndCheckSlide</string>
+      <key>Count</key>
+      <integer>1</integer>
+      <key>Disabled</key>
+      <false/>
+      <key>Find</key>
+      <data>
+      AUAAAMwBQAAA
+      </data>
+      <key>MatchOS</key>
+      <string>10.12</string>
+      <key>Replace</key>
+      <data>
+      /////8z/////
+      </data>
+      <key>Wildcard</key>
+      <string>0xCC</string>
+    </dict>
+  </array>
   <key>WholePrelinked</key>
   <false/>
   <key>Preferences</key>
@@ -208,12 +232,13 @@ This driver try to hook ExitBootServices event and patching kernelcache includin
 | BlockKextCaches | Array of kexts identifier to block. |
 | KextsToPatch | Array of kexts to patch. |
 | KernelToPatch | Array of kernel to patch. |
+| BooterToPatch | Array of booter to patch. |
 | WholePrelinked | Patch the whole prelinked / just kernel. |
 | (*) | Plus some of generic options ([>>>](#how-to)). |
 
 **Credits goes to:**
 
-_dmazar_ and Clover devs.
+_dmazar_ and _Clover devs_.
 
 ## AcpiPatcher
 
@@ -222,8 +247,7 @@ _dmazar_ and Clover devs.
 | `<driver-guid>` | AB6CE992-8D17-4C3A-A414-0FEAA3904504 |
 | `<driver-name>` | AcpiPatcher |
 
-> AcpiPatcher is an Darwin ACPI patcher UEFI driver. Yes, its a MEGA stripped version compare to original one. At least, we can now get rid from some of complexity to load custom ACPI tables with some fixes.
-This driver try to hook ExitBootServices event and patching ACPI as below.
+> AcpiPatcher is an **Darwin** ACPI patcher UEFI driver. Yes, its a MEGA stripped version compare to original one. At least, we can now get rid from some of complexity to load custom ACPI tables with some fixes. This driver try to hook ExitBootServices event and do patching ACPI as below.
 
 **Multiple places config plist to load** ([>>>](#how-to)):
 
@@ -286,7 +310,7 @@ This driver try to hook ExitBootServices event and patching ACPI as below.
 
 **Credits goes to:**
 
-_mackerintel_, _Mozodojo_, _Slice_,  _SunnyKi_, _al3xtjames_, and Clover devs.
+_mackerintel_, _Mozodojo_, _Slice_,  _SunnyKi_, _al3xtjames_, and _Clover devs_.
 
 # How-to
 
