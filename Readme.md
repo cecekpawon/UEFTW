@@ -65,8 +65,6 @@ DBounce will let you choose whether to:
 - Scan and load specified drivers directory: `DriversPath`.
 - Or to load in sequence drivers list option: `DriversList`.
 
-_With given drivers list in option, the specified drivers directory will simply ignored._
-
 **Suppress driver verbose log.**
 
 If this option are set to `TRUE`, it will mute driver verbose screen print while loading.
@@ -114,7 +112,7 @@ Following hotkeys are available to use while booting:
 | --- | --- |
 | DriversPath | Scan and load drivers from specified directory. **Other than uefi driver type will be rejected**. |
 | LoaderPath | Chainloader path. **Other than uefi application type will be rejected**. |
-| DriversList | Sequenced drivers list to load. |
+| DriversList | Sequenced drivers list to load. **With given drivers list, the specified drivers directory will simply ignored**. |
 | NoVerbose | Suppress driver verbose log. |
 | (*) | Plus some of generic options ([>>>](#how-to)). |
 
