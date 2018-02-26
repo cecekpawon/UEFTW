@@ -18,7 +18,7 @@
 
 ## ShellOpt
 
-> Port of GNUEFI _Finnbarr P. Murphy_ ShellOpt ([>>>](/fpmurphy/UEFI-Utilities)) to EDK2, to set / delete various Shell options.
+> Port of GNUEFI _Finnbarr P. Murphy_ ShellOpt ([>>>](https://github.com/fpmurphy/UEFI-Utilities)) to EDK2, to set / delete various Shell options.
 
 ```
 Usage: ShellOpt -s|--set [-nomap] [-nostartup | -startup] [-noversion]
@@ -55,7 +55,7 @@ Usage: ShellOpt -s|--set [-nomap] [-nostartup | -startup] [-noversion]
 Originally introduced by _Christoph Pfisterer_ (rEFIts author). The original source can be found [here](https://sourceforge.net/p/refit/code/HEAD/tree/trunk/refit/dbounce/).
 Later I port this module to work with EDK2 with following changes (compared to original):
 
-**Launch default shell by hotkey from known absolute path by hotkey as (original) `FALLBACKSHELL` replacement.**
+**Launch default shell by hotkey from known absolute path as (original) `FALLBACKSHELL` replacement.**
 
 Default path would be `\Shellx64.efi` (to follow ASUS rule).
 
@@ -262,8 +262,6 @@ _dmazar_ and _Clover devs_.
       <string>Cpu0Ist</string>
     </dict>
   </array>
-  <key>FixHeader</key>
-  <true/>
   <key>GenerateCPUStates</key>
   <true/>
   <key>PatchOemTableOnly</key>
@@ -300,7 +298,6 @@ _dmazar_ and _Clover devs_.
 | Key | Description |
 | --- | --- |
 | DropTables | Drop tables by Signature / TableId. |
-| FixHeader | Fix known ACPI header bugs in newest macOS. |
 | GenerateCPUStates | Generate CPU states. |
 | PatchOemTableOnly | Only patch OEM tables. |
 | Patches | Array of ACPI binary to patch. |
