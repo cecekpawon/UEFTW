@@ -87,13 +87,13 @@ Following hotkeys are available to use while booting:
 <dict>
   <key>DriversPath</key>
   <string>\EFI\DDrivers</string>
-  <key>LoaderPath</key>
-  <string>\EFI\Loader.efi</string>
   <key>DriversList</key>
   <array>
     <string>\EFI\DDrivers\Driver-1.efi</string>
     <string>\EFI\DDrivers\Driver-2.efi</string>
   </array>
+  <key>LoaderPath</key>
+  <string>\EFI\Loader.efi</string>
   <key>NoVerbose</key>
   <true/>
   <key>Preferences</key>
@@ -111,8 +111,8 @@ Following hotkeys are available to use while booting:
 | Key | Description |
 | --- | --- |
 | DriversPath | Scan and load drivers from specified directory. **Other than uefi driver type will be rejected**. |
+| DriversList | Sequenced drivers list to load. **With given drivers list, the specified drivers directory (DriversPath) will be simply ignored**. |
 | LoaderPath | Chainloader path. **Other than uefi application type will be rejected**. |
-| DriversList | Sequenced drivers list to load. **With given drivers list, the specified drivers directory will simply ignored**. |
 | NoVerbose | Suppress driver verbose log. |
 | (*) | Plus some of generic options ([>>>](#how-to)). |
 
