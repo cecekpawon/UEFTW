@@ -76,7 +76,7 @@ Following hotkeys are available to use while booting:
 |Key|Function|
 | --- | --- |
 | x | Disable this driver. |
-| c | Clear previously stored nvram config. |
+| c | Clear previously stored nvram config (plus custom sets from config). |
 | s | Launch shell app (if exists) as chainloader replacement. |
 
 **Multiple places config plist to load** ([>>>](#how-to)):
@@ -96,6 +96,18 @@ Following hotkeys are available to use while booting:
   <string>\EFI\Loader.efi</string>
   <key>NoVerbose</key>
   <true/>
+  <key>ClearNvram</key>
+  <dict>
+    <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
+    <array>
+      <string>efi-boot-device</string>
+      <string>efi-boot-device-data</string>
+    </array>
+    <key>158DEF5A-F656-419C-B027-7A3192C079D2</key>
+    <array>
+      <string>ShellOpt</string>
+    </array>
+  </dict>
   <key>Preferences</key>
   <dict>
     <key>Debug</key>
@@ -114,6 +126,7 @@ Following hotkeys are available to use while booting:
 | DriversList | Sequenced drivers list to load. **With given drivers list, the specified drivers directory (DriversPath) will be simply ignored**. |
 | LoaderPath | Chainloader path. **Other than uefi application type will be rejected**. |
 | NoVerbose | Suppress driver verbose log. |
+| ClearNvram | Key are nvram guid, followed by array of nvram keys / labels to clear. |
 | (*) | Plus some of generic options ([>>>](#how-to)). |
 
 **Indicator**
