@@ -11,6 +11,7 @@
 
 - [How-to](#how-to).
 - [Download](#download).
+- [Wiki](../../wiki).
 
 # Shell Applications
 
