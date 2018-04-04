@@ -97,6 +97,43 @@ Following hotkeys are available to use while booting:
   <string>\EFI\Loader.efi</string>
   <key>NoVerbose</key>
   <true/>
+  <key>PatchMatchingPdbName</key>
+  <true/>
+  <key>Patches</key>
+  <array>
+    <dict>
+      <key>Comment</key>
+      <string>Oz XMASS inject kext fix</string>
+      <key>Disabled</key>
+      <false/>
+      <key>Find</key>
+      <data>
+      gHkFcHUf
+      </data>
+      <key>Name</key>
+      <string>Ozmosis</string>
+      <key>Replace</key>
+      <data>
+      gHkFaXIf
+      </data>
+    </dict>
+    <dict>
+      <key>Comment</key>
+      <string>Oz XMASS smbios installer fix</string>
+      <key>Disabled</key>
+      <false/>
+      <key>Find</key>
+      <data>
+      SIsFIUIBAA+3SAZmiUsG
+      </data>
+      <key>Name</key>
+      <string>Ozmosis</string>
+      <key>Replace</key>
+      <data>
+      PmbHQwYAAJCQkJCQkJCQ
+      </data>
+    </dict>
+  </array>
   <key>ClearNvram</key>
   <dict>
     <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
@@ -128,6 +165,8 @@ Following hotkeys are available to use while booting:
 | LoaderPath | Chainloader path. **Other than uefi application type will be rejected**. |
 | NoVerbose | Suppress driver verbose log. |
 | ClearNvram | Key are nvram guid, followed by array of nvram keys / labels to clear. |
+| PatchMatchingPdbName | Preferred for looking matches `Patches -> Name` prop in [PdbName](http://www.debuginfo.com/articles/debuginfomatch.html#pdbfiles) (fallback to FilePath if none). |
+| Patches | Array of efi to patch. |
 | (*) | Plus some of generic options ([>>>](#how-to)). |
 
 **Indicator**
