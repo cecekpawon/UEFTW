@@ -95,6 +95,8 @@ Following hotkeys are available to use while booting:
   </array>
   <key>LoaderPath</key>
   <string>\EFI\Loader.efi</string>
+  <key>ShellPath</key>
+  <string>\EFI\Shellx64.efi</string>
   <key>NoVerbose</key>
   <true/>
   <key>PatchMatchingPdbName</key>
@@ -163,6 +165,7 @@ Following hotkeys are available to use while booting:
 | DriversPath | Scan and load drivers from specified directory. **Other than uefi driver type will be rejected**. |
 | DriversList | Sequenced drivers list to load. **With given drivers list, the specified drivers directory (DriversPath) will be simply ignored**. |
 | LoaderPath | Chainloader path. **Other than uefi application type will be rejected**. |
+| ShellPath | Custom Shell path. |
 | NoVerbose | Suppress driver verbose log. |
 | ClearNvram | Key are nvram guid, followed by array of nvram keys / labels to clear. |
 | PatchMatchingPdbName | Preferred for looking matches `Patches -> Name` prop in [PdbName](http://www.debuginfo.com/articles/debuginfomatch.html#pdbfiles) (fallback to FilePath if none). |
