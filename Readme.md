@@ -105,22 +105,6 @@ Following hotkeys are available to use while booting:
   <array>
     <dict>
       <key>Comment</key>
-      <string>Oz XMASS inject kext fix</string>
-      <key>Disabled</key>
-      <false/>
-      <key>Find</key>
-      <data>
-      gHkFcHUf
-      </data>
-      <key>Name</key>
-      <string>Ozmosis</string>
-      <key>Replace</key>
-      <data>
-      gHkFaXIf
-      </data>
-    </dict>
-    <dict>
-      <key>Comment</key>
       <string>Oz XMASS smbios installer fix</string>
       <key>Disabled</key>
       <false/>
@@ -156,6 +140,8 @@ Following hotkeys are available to use while booting:
     <true/>
     <key>SaveLogToFile</key>
     <true/>
+    <key>SaveLogToNvram</key>
+    <false/>
   </dict>
 </dict>
 ```
@@ -273,9 +259,13 @@ _Christoph Pfisterer_ + _CodeRush_ for codes, and _modbin_ for pointing to this 
   <dict>
     <key>Debug</key>
     <false/>
+    <key>Off</key>
+    <false/>
     <key>SaveLogToFile</key>
     <true/>
-    <key>Off</key>
+    <key>SaveLogToDeviceTree</key>
+    <false/>
+    <key>SaveLogToNvram</key>
     <false/>
   </dict>
 </dict>
@@ -347,6 +337,10 @@ _dmazar_ and _Clover devs_.
     <false/>
     <key>SaveLogToFile</key>
     <true/>
+    <key>SaveLogToDeviceTree</key>
+    <false/>
+    <key>SaveLogToNvram</key>
+    <false/>
   </dict>
 </dict>
 ```
@@ -363,6 +357,15 @@ _dmazar_ and _Clover devs_.
 
 _mackerintel_, _Mozodojo_, _Slice_,  _SunnyKi_, _al3xtjames_, and _Clover devs_.
 
+## Reconnect
+
+| Label | Value |
+| --- | --- |
+| `<driver-guid>` | B558F297-BF40-4CF0-BFD4-DC134F5C4616 |
+| `<driver-name>` | Reconnect |
+
+> Reconnect is to connect all current system handles recursively after optionally load some system drivers.
+
 # How-to
 
 **Driver generic options:**
@@ -372,6 +375,8 @@ _mackerintel_, _Mozodojo_, _Slice_,  _SunnyKi_, _al3xtjames_, and _Clover devs_.
 | Preferences -> Debug | With additional log messages. (*1) |
 | Preferences -> Off | Disable this driver. (*2) |
 | Preferences -> SaveLogToFile | Save log to file ('`<driver-name>`Log.txt' at the same path as '`<driver-name>`.efi' / ESP as a fallback). (*3) |
+| Preferences -> SaveLogToDeviceTree | Save log to DeviceTree ('IODeviceTree:/efi/platform/`<driver-name>`Log'). (*4) |
+| Preferences -> SaveLogToNvram | Save log to Nvram ('`<driver-guid>`:`<driver-name>`Log'). (*5) |
 
 **Apple NVRAM boot-args generic options:**
 
@@ -379,7 +384,9 @@ _mackerintel_, _Mozodojo_, _Slice_,  _SunnyKi_, _al3xtjames_, and _Clover devs_.
 | --- | --- |
 | -`<driver-name>`Dbg | refer to (*1) above. |
 | -`<driver-name>`Off | refer to (*2) above. |
-| -`<driver-name>`Log | refer to (*3) above. |
+| -`<driver-name>`LogFile | refer to (*3) above. |
+| -`<driver-name>`LogDeviceTree | refer to (*4) above. |
+| -`<driver-name>`LogNvram | refer to (*5) above. |
 
 **Driver will start to look for user config with following sequences:**
 
@@ -397,7 +404,7 @@ bcfg driver add N <driver-name>.efi <driver-name>
 
 **Extract binary:**
 
-Please use [UEFITool](https://github.com/LongSoft/UEFITool) to extract the driver.
+Please use [UEFITool](https://github.com/LongSoft/UEFITool) to extract the driver. Read [Wiki](../../wiki).
 
 | Section | Description |
 | --- | --- |
