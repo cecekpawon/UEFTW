@@ -11,3 +11,5 @@
 
 - [Wiki](../../wiki).
 - [Download](Releases).
+
+![](../../wiki/assets/quoboard.jpg)
